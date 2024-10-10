@@ -1,0 +1,19 @@
+.app {
+  background-color: #f3f3f3;
+  height: 100vh;
+}
+.app__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+}
+.app__search {
+  background-image: url("../../assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}

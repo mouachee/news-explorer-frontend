@@ -48,3 +48,11 @@
   src: url(./fonts/roboto-slab-700.woff) format("woff"),
     url(./fonts/roboto-slab-700.woff2) format("woff2");
 }
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./fonts/SourceSansPro-400.woff) format("woff"),
+    url(./fonts/SourceSansPro-400.woff2) format("woff2");
+}

@@ -1,0 +1,29 @@
+.cards {
+  margin-top: 80px;
+}
+.cards__result {
+  font-family: "Roboto Slab", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin: 0 624px 0 104px;
+  color: #1a1b22;
+}
+.cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 64px 104px 64px;
+  padding: 0;
+  list-style-type: none;
+}
+.cards__show-more-container {
+  display: flex;
+  justify-content: center;
+}
+.cards__show-more-button {
+  width: 288px;
+  height: 64px;
+  padding: 0;
+  border: none;
+  margin: 0 0 80px;
+}
