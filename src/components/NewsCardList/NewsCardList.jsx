@@ -1,11 +1,10 @@
-import { mockNewsData } from "../../utils/constants";
 import NewsCard from "../NewsCard/NewsCard";
 
-function NewsCardList() {
+function NewsCardList({ articles }) {
   return (
     <ul className="cards__list">
-      {mockNewsData.map((item) => {
-        return <NewsCard key={item.title} item={item} />;
+      {articles.map((item) => {
+        return <NewsCard key={item.url} item={item} />;
       })}
     </ul>
   );

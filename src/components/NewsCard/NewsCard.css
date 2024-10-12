@@ -1,6 +1,17 @@
 .card {
   width: 399px;
+  height: 576px;
   position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.card__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 .card__image {
   width: 400px;
@@ -30,16 +41,20 @@
   color: #b6bcbf;
   padding: 8px 8px;
   margin: 0;
+  cursor: pointer;
 }
 .card__info {
   margin: 20px 24px 24px;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .card__published {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   max-width: 161px;
   font-size: 18px;
-  margin: 0;
+  margin: 0 0 12px;
   padding: 0;
   color: #b6bcbf;
   font-weight: 400;
@@ -47,20 +62,30 @@
 .card__title {
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-size: 26px;
-  max-width: 352px;
+  height: 60px;
   color: #1a1b22;
   font-weight: 400;
-  margin: 0;
-  padding: 12px 0 16px;
+  margin: 0 0 16px;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .card__description {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  max-width: 352px;
+  height: 110px;
   color: #1a1b22;
-  margin: 0;
-  padding: 0 0 18px;
+  margin: 0 0 18px;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 .card__source {
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;

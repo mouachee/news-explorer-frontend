@@ -43,6 +43,8 @@
   margin-right: 64px;
   font-weight: 500;
   font-size: 18px;
+  color: #b6bcbf;
+  cursor: pointer;
 }
 .nav__logout {
   display: flex;
