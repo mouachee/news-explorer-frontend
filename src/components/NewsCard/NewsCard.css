@@ -21,7 +21,7 @@
   padding: 0;
   margin: 0;
 }
-.card__saved--button {
+.card__button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -32,16 +32,27 @@
   color: #ffff;
   margin: 0;
   padding: 0;
-}
-.card__saved--icon {
-  top: 24px;
-  right: 24px;
-  width: 24px;
-  height: 24px;
-  color: #b6bcbf;
-  padding: 8px 8px;
-  margin: 0;
   cursor: pointer;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  display: flex;
+}
+.card__no-saved {
+  background-image: url("../../assets/noSaveIcon.png");
+}
+.card__saved-icon {
+  background-image: url("../../assets/saveIcon.png");
+}
+.card__remove-icon {
+  background-image: url("../../assets/trash.png");
+}
+.card__remove-icon:hover {
+  background-image: url("../../assets/trashHover.png");
+}
+.card__no-saved:hover {
+  background-image: url("../../assets/savedHover.png");
 }
 .card__info {
   margin: 20px 24px 24px;
@@ -95,4 +106,27 @@
   max-width: 100%;
   margin: 0;
   padding: 0;
+}
+.card__button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #ffff;
+  box-shadow: 0px 10px 22px 0px #3b4a741a;
+  box-sizing: border-box;
+  color: #1a1b22;
+  z-index: 999;
+  border-radius: 10px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  transition: opacity 0.5s linear 0s;
+  position: absolute;
+  left: -172px;
+  margin: 0;
+  padding: 11px 26px;
+}
+.card__button-text_hidden {
+  opacity: 0;
 }

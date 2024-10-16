@@ -1,12 +1,40 @@
+import { useState } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 
-function NewsCardList({ articles }) {
+function NewsCardList({
+  articles,
+  onSaveArticle,
+  savedArticles,
+  onRemoveArticle,
+}) {
+  const [cardsShown, setCardsShown] = useState(3);
+
+  const handleShowMore = () => {
+    setCardsShown((prev) => Math.min(prev + 3, articles.length));
+  };
   return (
-    <ul className="cards__list">
-      {articles.map((item) => {
-        return <NewsCard key={item.url} item={item} />;
-      })}
-    </ul>
+    <>
+      <ul className="cards__list">
+        {articles.slice(0, cardsShown).map((item) => {
+          return (
+            <NewsCard
+              key={item.url}
+              item={item}
+              onSaveArticle={onSaveArticle}
+              savedArticles={savedArticles}
+              onRemoveArticle={onRemoveArticle}
+            />
+          );
+        })}
+      </ul>
+      {cardsShown < articles.length && (
+        <div className="cards__show-more-container">
+          <button className="cards__show-more-button" onClick={handleShowMore}>
+            Show more
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 

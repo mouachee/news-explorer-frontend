@@ -1,9 +1,18 @@
-.nav__container {
+.nav__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   width: 100%;
+  height: 80px;
+
   border-bottom: 2px solid #ffffff33;
+}
+.nav__link {
+  text-decoration: none;
+  color: inherit;
 }
 .nav__item {
   position: relative;
@@ -12,6 +21,10 @@
   font-family: "Roboto", Arial, sans-serif;
   color: #ffffff;
 }
+.nav__container--black-text .nav__item {
+  color: #1a1b22;
+}
+
 .nav__item--logo {
   margin-left: 104px;
   margin-right: auto;
@@ -27,24 +40,43 @@
   font-size: 18px;
   cursor: pointer;
 }
-.nav__item--active::after {
-  content: "";
-  display: block;
-  width: 68px;
-  height: 3px;
-  background-color: #ffff;
-  position: absolute;
-  bottom: -29px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
 .nav__item--saved {
-  margin-left: 66px;
+  margin-left: 76px;
   margin-right: 64px;
   font-weight: 500;
   font-size: 18px;
   color: #b6bcbf;
   cursor: pointer;
+}
+.nav__item-home--hover,
+.nav__item-saved--hover {
+  transition: 0.5s ease-in-out;
+}
+.nav__item-home--hover:hover {
+  color: #94989b;
+}
+.nav__item-saved--hover:hover {
+  color: #ffff;
+}
+
+.nav__item--active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  bottom: -29px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav__item--home .nav__item--active::after {
+  width: 68px;
+  background-color: #ffff;
+}
+.nav__item--saved .nav__item--active::after {
+  width: 178px;
+  background-color: #1a1b22;
 }
 .nav__logout {
   display: flex;
@@ -71,4 +103,11 @@
   width: 24px;
   height: 24px;
   margin-right: 15px;
+}
+
+.nav__container--black-text .nav__username {
+  color: #1a1b22;
+}
+.nav__container--black-text .nav__logout {
+  border-color: #1a1b22;
 }

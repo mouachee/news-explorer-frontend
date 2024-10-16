@@ -1,7 +1,31 @@
 import "./NewsCard.css";
-import noSaveIcon from "../../assets/noSaveIcon.png";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
-function NewsCard({ item }) {
+function NewsCard({
+  item,
+  onSaveArticle,
+  savedArticles = [],
+  onRemoveArticle,
+}) {
+  const isSaved = savedArticles.some((article) => article.url === item.url);
+  const location = useLocation();
+  const onSavedPage = location.pathname === "/saved-news";
+
+  const [showText, setShowText] = useState(false);
+
+  const handleSave = () => {
+    if (onSavedPage) {
+      onRemoveArticle(item);
+    } else {
+      if (!isSaved) {
+        onSaveArticle(item);
+      } else {
+        onRemoveArticle(item);
+      }
+    }
+  };
+
   return (
     <li className="card">
       <a
@@ -18,13 +42,28 @@ function NewsCard({ item }) {
           <p className="card__source">{item.source.name}</p>
         </div>
       </a>
-      <button className="card__saved--button">
-        <img
-          src={noSaveIcon}
-          alt="no save card"
-          className="card__saved--icon"
-        />
-        {""}
+      <button
+        className={`card__button ${
+          onSavedPage
+            ? "card__remove-icon"
+            : isSaved
+            ? "card__saved-icon"
+            : "card__no-saved"
+        }`}
+        onClick={handleSave}
+        onMouseEnter={() => setShowText(true)}
+        onMouseLeave={() => setShowText(false)}
+      >
+        {" "}
+        {onSavedPage && (
+          <span
+            className={`card__button-text ${
+              showText ? "" : "card__button-text_hidden"
+            }`}
+          >
+            Remove from saved
+          </span>
+        )}
       </button>
     </li>
   );

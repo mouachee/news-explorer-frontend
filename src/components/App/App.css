@@ -10,10 +10,12 @@
   background-color: #f3f3f3;
 }
 .app__search {
+  position: relative;
+  z-index: 1;
+}
+.app__search--with-bg {
   background-image: url("../../assets/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
 }
