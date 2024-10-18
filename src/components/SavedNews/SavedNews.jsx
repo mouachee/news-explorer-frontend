@@ -1,10 +1,11 @@
 import NewsCard from "../NewsCard/NewsCard";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import "./SavedNews.css";
-function SavedNews({ savedArticles, onRemoveArticle }) {
+
+function SavedNews({ savedArticles, onRemoveArticle, keywords }) {
   return (
     <>
-      <SavedNewsHeader />
+      <SavedNewsHeader savedArticles={savedArticles} keywords={keywords} />
       <div className="saved__news-list">
         {savedArticles.map((item) => (
           <NewsCard

@@ -42,6 +42,9 @@ function NewsCard({
           <p className="card__source">{item.source.name}</p>
         </div>
       </a>
+      {onSavedPage && item.keyword && (
+        <p className="card__keyword">{item.keyword}</p>
+      )}
       <button
         className={`card__button ${
           onSavedPage

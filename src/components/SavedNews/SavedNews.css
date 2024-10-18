@@ -21,7 +21,7 @@
   color: #1a1b22;
 }
 
-.saved__news--keywords {
+.saved__keywords {
   margin: 0;
   padding: 0;
   max-width: 712px;
@@ -29,6 +29,12 @@
   font-weight: 400;
   font-size: 18px;
   color: #1a1b22;
+}
+.saved__keywords-text {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  columns: #1a1b22;
 }
 .saved__news-list {
   display: flex;
