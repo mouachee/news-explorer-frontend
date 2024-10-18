@@ -14,15 +14,30 @@ function Footer() {
             <Link to="/" className="footer__link--home">
               Home
             </Link>
-            <a href="" className="footer__link--tripleten">
+            <a
+              href="https://tripleten.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__link--tripleten"
+            >
               TripleTen
             </a>
           </div>
           <div className="footer__social">
-            <a href="" className="footer__social--github">
+            <a
+              href="https://github.com/mouachee"
+              className="footer__social--github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={Github} alt="" className="footer__social-icon" />
             </a>
-            <a href="" className="footer__social--facebook">
+            <a
+              href="https://www.facebook.com/tripleten.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__social--facebook"
+            >
               <img src={Facebook} alt="" className="footer__social-icon" />
             </a>
           </div>
