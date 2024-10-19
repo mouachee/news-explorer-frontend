@@ -1,6 +1,6 @@
 import "./Nav.css";
-import HomeLogoutIcon from "../../assets/logout.png";
-import SaveNewsLogoutIcon from "../../assets/log-out.png";
+import HomeLogoutIcon from "../../assets/wLogout.svg";
+import SaveNewsLogoutIcon from "../../assets/bLogout.svg";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 

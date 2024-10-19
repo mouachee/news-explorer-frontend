@@ -10,14 +10,10 @@ import { fetchNews } from "../../utils/api";
 import SavedNews from "../SavedNews/SavedNews";
 
 function App() {
-  // search term stored the current keyword which is empty "" now. setSearchTerm update the state to whatever the user search "SpaceX//
   const [searchTerm, setSearchTerm] = useState("");
-  // articles will hold the list of articles fetched from the api after a search. setArticles update the articles appearance when user search using kekyword.
   const [articles, setArticles] = useState([]);
-  // saveArticles hold the list of articles that user saved to save page. setSavedArticles will update the list when user add or remove more.
   const [savedArticles, setSavedArticles] = useState([]);
   const [loading, setLoading] = useState(false);
-  // keywords sores a list of keywords that were used to search for articles. setKeywords update the keyword list if remove card the keyword update to remove too.
   const [keywords, setKeywords] = useState([]);
   const location = useLocation();
 
@@ -31,13 +27,13 @@ function App() {
     try {
       const fetchArticles = await fetchNews(keyword); // fetch articles from the api using the keyword search
       const articlesWithKeyword = fetchArticles.map((article) => ({
-        ...article, // this will copied the articles array that fetched from api to fetchArticles and will add the keyword: "" property to the copied array by using map().
+        ...article, // this will copied the articles array that fetched from api to fetchArticles array and will add the keyword: "" property to the copied array by using map().
         keyword, // keyword property
       }));
       setArticles(articlesWithKeyword); // it updates the state of the newly copied articles that have keyword property.
       localStorage.setItem(
         "lastSearchArticles",
-        JSON.stringify(articlesWithKeyword) // this will save the newly articles in localstorage
+        JSON.stringify(articlesWithKeyword)
       );
 
       setTimeout(() => {
@@ -50,36 +46,37 @@ function App() {
   };
 
   const saveArticles = (article) => {
-    const updatedSavedArticles = [...savedArticles, article]; // this will copy the savedArticles array to updatedSavedArticles array even tho the saveArticle is [].
-    setSavedArticles(updatedSavedArticles); // this will update the savedArticles state to the updatesavearticles.
+    const updatedSavedArticles = [...savedArticles, article];
+    setSavedArticles(updatedSavedArticles);
     localStorage.setItem("savedArticles", JSON.stringify(updatedSavedArticles)); // stored the newly array to local storage so it stays persist.
 
     const relatedKeyword = article.keyword; // this make sure that every article object had a keyword property when saved keyword: ""
+
+    // check if the keyword already in the array if not then add
     if (!keywords.includes(relatedKeyword)) {
-      // check if the keyword already in the array if not then add
       const updatedKeywords = [...keywords, relatedKeyword];
       setKeywords(updatedKeywords);
       localStorage.setItem("searchedKeywords", JSON.stringify(updatedKeywords));
     }
   };
 
+  // check for URL to remove
   const removeArticle = (article) => {
     const updatedSavedArticles = savedArticles.filter(
-      // this create a new array and only articles with different URLS are kept in the updateSaveArticles array.
       (a) => a.url !== article.url
     );
     setSavedArticles(updatedSavedArticles);
 
     localStorage.setItem("savedArticles", JSON.stringify(updatedSavedArticles));
 
-    const relatedKeyword = article.keyword; // check if any other saved articels share the same keyword
+    // check if any other saved articels share the same keyword with the removed one and do not remove them
+    const relatedKeyword = article.keyword;
     const remainingArticlesWithKeyword = updatedSavedArticles.filter(
-      // This will make sure to not delete other cards who share the same keyword as the deleted one.
       (a) => a.keyword === relatedKeyword
     );
 
+    // this will remove the keyword if there's no other card who share the keyword
     if (remainingArticlesWithKeyword.length === 0) {
-      // this will remove the keyword if there's no other card who share the keyword
       const remainingKeywords = keywords.filter((kw) => kw !== relatedKeyword);
       setKeywords(remainingKeywords);
       localStorage.setItem(

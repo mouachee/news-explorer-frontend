@@ -55,19 +55,19 @@
   display: flex;
 }
 .card__no-saved {
-  background-image: url("../../assets/noSaveIcon.png");
+  background-image: url("../../assets/noSaveIcon.svg");
 }
 .card__saved-icon {
-  background-image: url("../../assets/saveIcon.png");
+  background-image: url("../../assets/savedIcon.svg");
 }
 .card__remove-icon {
-  background-image: url("../../assets/trash.png");
+  background-image: url("../../assets/trash.svg");
 }
 .card__remove-icon:hover {
-  background-image: url("../../assets/trashHover.png");
+  background-image: url("../../assets/trashHover.svg");
 }
 .card__no-saved:hover {
-  background-image: url("../../assets/savedHover.png");
+  background-image: url("../../assets/saveIconHover.svg");
 }
 .card__info {
   margin: 20px 24px 24px;

@@ -26,10 +26,25 @@
   position: relative;
 }
 .header__search-container {
+  margin: 56px 0 0;
   display: flex;
   align-items: center;
-  margin: 56px 0 0;
+  position: relative;
 }
+.header__search-error {
+  width: 200px;
+  height: 14px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color: #ff0000;
+  position: absolute;
+  top: -24px;
+  left: 24px;
+}
+
 .header__search-input {
   padding: 0 0 0 16px;
   font-family: "Roboto", Arial, sans-serif;
@@ -54,4 +69,10 @@
   cursor: pointer;
   outline: none;
   border: none;
+}
+.header__search-btn:hover {
+  background-color: #347eff;
+}
+.header__search-btn:active {
+  background-color: #2a65cc;
 }
