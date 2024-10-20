@@ -1,4 +1,4 @@
-import "./Nav.css";
+import "./Navigation.css";
 import HomeLogoutIcon from "../../assets/wLogout.svg";
 import SaveNewsLogoutIcon from "../../assets/bLogout.svg";
 import { useEffect, useState } from "react";

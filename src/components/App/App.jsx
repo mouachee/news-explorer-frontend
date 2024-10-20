@@ -1,12 +1,12 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Nav from "../Nav/Nav";
+import Nav from "../Navigation/Navigation";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
-import { fetchNews } from "../../utils/api";
+import { fetchNews } from "../../utils/newsApi";
 import SavedNews from "../SavedNews/SavedNews";
 
 function App() {
@@ -85,6 +85,8 @@ function App() {
       );
     }
   };
+
+  // USE EFFECT
 
   useEffect(() => {
     const lastSearchTerm = localStorage.getItem("lastSearchTerm");
