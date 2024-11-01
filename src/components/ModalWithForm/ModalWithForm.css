@@ -1,0 +1,135 @@
+.modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal__opened {
+  visibility: visible;
+}
+.modal__content {
+  position: relative;
+  background-color: #ffffff;
+  padding: 34px 36px 28px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+}
+.modal__title {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #1a1b22;
+  margin: 0;
+  padding: 0;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.modal__label {
+  font-weight: 400;
+  font-size: 12px;
+  color: #2f71e5;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", Arial, sans-serif;
+  position: relative;
+}
+.modal__label--email {
+  margin-top: 22px;
+}
+.modal__label--password {
+  padding: 0;
+  margin: 31px 0 0;
+}
+.modal__label--username {
+  margin: 31px 0 0;
+}
+.modal__input {
+  display: block;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin-top: 9px;
+  padding: 8px 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.modal__input:focus {
+  border: 1px solid #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  padding: 8px 0 8px 0;
+  border-radius: 4px;
+}
+.modal__close {
+  background: transparent url(../../assets/closeIcon.svg);
+  position: absolute;
+  top: -44px;
+  right: -44px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.modal__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal__submit {
+  width: 360px;
+  height: 64px;
+  background-color: #2f71e5;
+  color: #ffff;
+  border-radius: 100px;
+  box-shadow: 0px 5px 15px 0px #0e1a3933;
+  margin: 39px 0 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.modal__submit--disabled {
+  color: #b6bcbf;
+  background-color: #e6e8eb;
+}
+.modal__link {
+  margin-top: 16px;
+  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.modal__link--text {
+  color: #2f71e5;
+  cursor: pointer;
+}
+.modal__error {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  color: red;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}

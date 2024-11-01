@@ -7,6 +7,7 @@ function NewsCard({
   onSaveArticle,
   savedArticles = [],
   onRemoveArticle,
+  isLoggedIn,
 }) {
   const isSaved = savedArticles.some((article) => article.url === item.url);
   const location = useLocation();
@@ -18,6 +19,9 @@ function NewsCard({
     if (onSavedPage) {
       onRemoveArticle(item);
     } else {
+      if (!isLoggedIn) {
+        return;
+      }
       if (!isSaved) {
         onSaveArticle(item);
       } else {
@@ -65,6 +69,15 @@ function NewsCard({
             }`}
           >
             Remove from saved
+          </span>
+        )}
+        {!isLoggedIn && !onSavedPage && (
+          <span
+            className={`card__button-text ${
+              showText ? "" : "card__button-text_hidden"
+            }`}
+          >
+            Sign in to save articles
           </span>
         )}
       </button>

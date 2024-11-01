@@ -29,3 +29,18 @@ export const fetchNews = async (keyword) => {
     throw new Error("Failed to fetch news");
   }
 };
+
+export function saveArticle(article) {
+  return new Promise((resolve, reject) => {
+    resolve({
+      id: "65f7371e7bce9e7d331b11a0",
+      url: article.url,
+      title: article.title,
+      urlToImage: article.urlToImage,
+      description: article.description,
+      source: article.source.name,
+      keyword: article.keyword,
+      publishedAt: article.publishedAt,
+    });
+  });
+}

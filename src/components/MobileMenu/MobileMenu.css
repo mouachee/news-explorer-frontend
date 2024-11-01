@@ -1,0 +1,83 @@
+@media screen and (min-width: 320px) and (max-width: 630px) {
+  .mobile-menu {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .mobile-menu__container {
+    max-width: 320px;
+    width: 100%;
+    height: 230px;
+    padding: 0 16px;
+    background-color: darkblue;
+  }
+  .mobile-menu__container::before {
+    content: "";
+    position: absolute;
+    top: 56px;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+  }
+  .mobile-menu__nav-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+  }
+  .mobile-menu__item {
+    list-style-type: none;
+  }
+  .mobile-menu__logo {
+    font-weight: 700;
+    font-family: "Roboto Slab ", Arial, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .mobile-menu__button {
+    background: transparent url("../../assets/mobileCloseIcon.svg");
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .mobile-menu__container-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+  }
+  .mobile-menu__home {
+    display: flex;
+    color: #ffff;
+    text-decoration: none;
+    width: 100%;
+    align-items: center;
+  }
+  .mobile-menu__text-home {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 56px;
+  }
+  .mobile-menu__signin {
+    width: 100%;
+    height: 56px;
+    border-radius: 100px;
+    border: 1px solid white;
+    padding: 0;
+    margin: 22px 0;
+    background-color: transparent;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #fff;
+  }
+}

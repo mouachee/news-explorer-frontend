@@ -9,6 +9,7 @@ function Main({
   savedArticles,
   onRemoveArticle,
   loading,
+  isLoggedIn,
 }) {
   return (
     <main>
@@ -22,6 +23,7 @@ function Main({
             onSaveArticle={onSaveArticle}
             savedArticles={savedArticles}
             onRemoveArticle={onRemoveArticle}
+            isLoggedIn={isLoggedIn}
           />
         </section>
       ) : (

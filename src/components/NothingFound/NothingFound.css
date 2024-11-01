@@ -28,3 +28,9 @@
   font-size: 18px;
   color: #b6bcbf;
 }
+
+@media screen and (max-width: 863px) {
+  .nothing-found__container {
+    margin: 100px 0 40px;
+  }
+}

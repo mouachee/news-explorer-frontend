@@ -15,6 +15,7 @@
   font-weight: 400;
   font-size: 16px;
   color: #b6bcbf;
+  line-height: 22px;
 }
 .footer__links {
   display: flex;
@@ -30,14 +31,23 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
+  line-height: 24px;
 }
 .footer__link--home {
   text-decoration: none;
   color: #1a1b22;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
 }
 .footer__link--tripleten {
   text-decoration: none;
   color: #1a1b22;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
 }
 .footer__social {
   display: flex;
@@ -56,4 +66,62 @@
 .footer__social--facebook {
   width: 24px;
   height: 24px;
+}
+
+@media screen and (max-width: 863px) {
+  .footer__container {
+    margin: 24px 40px 20px;
+  }
+  .footer__copyright {
+    margin: 0;
+    padding: 0 0 18px;
+  }
+  .footer__links-container {
+    margin: 0;
+    padding: 0 0 18px;
+  }
+  .footer__social {
+    margin: 0;
+    padding: 0 0 20px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 630px) {
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+  .footer__container {
+    max-width: 320px;
+    height: 176px;
+    flex-direction: column;
+    margin: 0;
+  }
+  .footer__copyright {
+    order: 2;
+    margin: 0 0 22px;
+  }
+  .footer__links {
+    order: 1;
+    margin: 0;
+    max-width: 320px;
+    width: 100%;
+    justify-content: space-between;
+    height: 74px;
+    padding: 20px 16px 38px;
+    align-items: start;
+  }
+  .footer__links-container {
+    flex-direction: column;
+    max-width: 200px;
+    height: 74px;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+  .footer__link--home {
+    margin-bottom: auto;
+  }
+  .footer__social {
+    padding: 0;
+  }
 }
