@@ -220,7 +220,7 @@
   .nav__container--menu-open {
     background-color: black;
   }
-  .nav__hide-mobile {
+  .nav__hide-moble {
     display: none;
   }
 }
