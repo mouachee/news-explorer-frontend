@@ -11,7 +11,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  width: 356px;
+  width: min(100%, 356px);
 }
 .nothing-found__message {
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;

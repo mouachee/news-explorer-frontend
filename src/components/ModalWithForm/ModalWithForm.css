@@ -22,6 +22,7 @@
   width: 100%;
   max-width: 430px;
   box-sizing: border-box;
+  margin: auto;
 }
 .modal__title {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -132,4 +133,32 @@
   overflow: hidden;
   white-space: nowrap;
   max-width: 100%;
+}
+
+@media screen and (max-width: 630px) {
+  .modal {
+    background-color: transparent;
+  }
+  .modal__content {
+    padding: 16px 16px 28px;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .modal__close {
+    background: transparent url("../../assets/mobileCloseIcon.svg");
+    width: 24px;
+    height: 24px;
+    right: 16px;
+  }
+  .modal__label--email {
+    margin-top: 18px;
+  }
+  .modal__submit {
+    width: 288px;
+    height: 64px;
+    margin: 23px 0 0;
+  }
 }

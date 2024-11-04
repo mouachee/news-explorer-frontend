@@ -188,6 +188,7 @@ function App() {
               onLogOut={handleLogOut}
               handleSignInClick={handleSignInClick}
               isLoggedIn={isLoggedIn}
+              activeModal={activeModal}
             />
             {isHomePage && (
               <Header
