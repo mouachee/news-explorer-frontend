@@ -1,10 +1,32 @@
 import { APIkey } from "./constants";
 
+function formatMonth(dateString) {
+  const date = new Date(dateString);
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const monthIndex = date.getMonth();
+  const monthName = monthNames[monthIndex];
+  // Format the full date as needed
+  return `${monthName} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
 export const fetchNews = async (keyword) => {
-  const today = new Date().toISOString().split("T")[0];
-  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
-    .toISOString()
-    .split("T")[0];
+  const today = formatMonth(new Date().toISOString().split("T")[0]);
+  const sevenDaysAgo = formatMonth(
+    new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]
+  );
 
   try {
     const response = await fetch(
@@ -31,6 +53,8 @@ export const fetchNews = async (keyword) => {
 };
 
 export function saveArticle(article) {
+  const formattedPublishedAt = formatMonth(article.publishedAt);
+
   return new Promise((resolve, reject) => {
     resolve({
       id: "65f7371e7bce9e7d331b11a0",
@@ -40,7 +64,7 @@ export function saveArticle(article) {
       description: article.description,
       source: article.source.name,
       keyword: article.keyword,
-      publishedAt: article.publishedAt,
+      publishedAt: formattedPublishedAt,
     });
   });
 }
