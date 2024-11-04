@@ -1,13 +1,14 @@
 import "./Navigation.css";
 import HomeLogoutIcon from "../../assets/wLogout.svg";
 import SaveNewsLogoutIcon from "../../assets/bLogout.svg";
-import MenuIcon from "../../assets/menu.svg";
+import HmenuIcon from "../../assets/homeMenu.svg";
+import SmenuIcon from "../../assets/savedMenu.svg";
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
-function Nav({ handleSignInClick, isLoggedIn, onLogOut }) {
+function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
   const [activeItem, setActiveItem] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -24,6 +25,11 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut }) {
     }
   }, [location.pathname, isHomePage, isSavedNewsPage]);
 
+  const handleSignInAndCloseMenu = () => {
+    setIsMenuOpen(false);
+    handleSignInClick();
+  };
+
   return (
     <nav className="nav">
       <div
@@ -32,11 +38,16 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut }) {
         }`}
       >
         <ul className="nav__list">
-          <li className="nav__item nav__item--logo">
+          <li
+            className={`nav__item nav__item--logo ${
+              activeModal ? "nav__hide-mobile" : ""
+            }`}
+          >
             <Link to="/" className="nav__link">
               NewsExplorer
             </Link>
           </li>
+
           <li
             className={`nav__item nav__item--home ${
               isSavedNewsPage ? "nav__item-home--hover" : ""
@@ -85,30 +96,42 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut }) {
             </>
           ) : (
             <li className="nav__auth">
-              <button className="nav__signin" onClick={handleSignInClick}>
+              <button
+                className="nav__signin"
+                onClick={handleSignInAndCloseMenu}
+              >
                 Sign in
               </button>
             </li>
           )}
-          <li className="nav__item nav__menu-icon">
+
+          <li
+            className={`nav__item nav__menu-icon ${
+              activeModal ? "nav__hide-mobile" : ""
+            }`}
+          >
             <button
               className="nav__menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <img src={MenuIcon} alt="menu icon" className="menu__icon" />
+              <img
+                src={activeItem == "saved" ? SmenuIcon : HmenuIcon}
+                alt="menu icon"
+                className="menu__icon"
+              />
             </button>
           </li>
         </ul>
       </div>
       <MobileMenu
         isOpen={isMenuOpen}
-        onClose={() => {
-          setIsMenuOpen(false);
-        }}
+        onClose={() => setIsMenuOpen(false)}
         isLoggedIn={isLoggedIn}
         onLogOut={onLogOut}
         onSignInClick={handleSignInClick}
+        logoutIcon={HomeLogoutIcon}
+        isHomePage={isHomePage}
       />
     </nav>
   );
