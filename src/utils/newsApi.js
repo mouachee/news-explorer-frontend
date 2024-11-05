@@ -23,10 +23,10 @@ function formatMonth(dateString) {
 }
 
 export const fetchNews = async (keyword) => {
-  const today = formatMonth(new Date().toISOString().split("T")[0]);
-  const sevenDaysAgo = formatMonth(
-    new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]
-  );
+  const today = new Date().toISOString().split("T")[0];
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+    .toISOString()
+    .split("T")[0];
 
   try {
     const response = await fetch(
@@ -34,17 +34,22 @@ export const fetchNews = async (keyword) => {
     );
     const data = await response.json();
 
-    const filteredArticles = data.articles.filter(
-      (article) =>
-        article.title &&
-        article.title.toLowerCase() !== "[removed]" &&
-        article.description &&
-        article.description.toLowerCase() !== "[removed]" &&
-        article.source &&
-        article.source.name &&
-        article.source.name.toLowerCase() !== "[removed]" &&
-        article.urlToImage
-    );
+    const filteredArticles = data.articles
+      .filter(
+        (article) =>
+          article.title &&
+          article.title.toLowerCase() !== "[removed]" &&
+          article.description &&
+          article.description.toLowerCase() !== "[removed]" &&
+          article.source &&
+          article.source.name &&
+          article.source.name.toLowerCase() !== "[removed]" &&
+          article.urlToImage
+      )
+      .map((article) => ({
+        ...article,
+        publishedAt: formatMonth(article.publishedAt),
+      }));
 
     return filteredArticles;
   } catch (err) {
@@ -53,8 +58,6 @@ export const fetchNews = async (keyword) => {
 };
 
 export function saveArticle(article) {
-  const formattedPublishedAt = formatMonth(article.publishedAt);
-
   return new Promise((resolve, reject) => {
     resolve({
       id: "65f7371e7bce9e7d331b11a0",
@@ -64,7 +67,7 @@ export function saveArticle(article) {
       description: article.description,
       source: article.source.name,
       keyword: article.keyword,
-      publishedAt: formattedPublishedAt,
+      publishedAt: article.publishedAt,
     });
   });
 }
