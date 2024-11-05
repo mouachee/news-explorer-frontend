@@ -1,5 +1,5 @@
 import "./App.css";
-import { act, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Nav from "../Navigation/Navigation";
 import Header from "../Header/Header";
@@ -65,7 +65,7 @@ function App() {
     }
   };
 
-  // set up Sign Up logic
+  // set up Sign Up logic -TODO
 
   const handleLogOut = () => {
     setIsLoggedIn(false);
