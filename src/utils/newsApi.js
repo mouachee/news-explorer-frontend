@@ -52,7 +52,7 @@ export const fetchNews = async (keyword) => {
       }));
 
     return filteredArticles;
-  } catch (err) {
+  } catch {
     throw new Error("Failed to fetch news");
   }
 };

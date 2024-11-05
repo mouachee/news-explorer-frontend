@@ -15,7 +15,7 @@ import { setToken } from "../../utils/token";
 import SignUp from "../SignUp/SignUp";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import SignupSuccessPopup from "../SignupSuccessPopup/SignupSuccessPopup";
+// import SignupSuccessPopup from "../SignupSuccessPopup/SignupSuccessPopup";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,7 +49,7 @@ function App() {
     }
     try {
       const data = await auth.authorize(email, password);
-      // setToken(data.token);
+      setToken(data.token);
       setIsLoggedIn(true);
 
       // const user = await auth.checkToken(data.token);
@@ -191,11 +191,7 @@ function App() {
               activeModal={activeModal}
             />
             {isHomePage && (
-              <Header
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-                onSearch={handleSearch}
-              />
+              <Header setSearchTerm={setSearchTerm} onSearch={handleSearch} />
             )}
           </div>
           <Routes>
@@ -203,7 +199,6 @@ function App() {
               path="/"
               element={
                 <Main
-                  searchTerm={searchTerm}
                   articles={articles}
                   onSaveArticle={saveArticles}
                   savedArticles={savedArticles}

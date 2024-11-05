@@ -80,7 +80,9 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
               </li>
               <li className="nav__item nav__item--logout">
                 <button className="nav__logout">
-                  <span className="nav__username">Elise</span>
+                  <span className="nav__username">
+                    {currentUser?.name}Elise
+                  </span>
                   <img
                     src={
                       activeItem == "saved"

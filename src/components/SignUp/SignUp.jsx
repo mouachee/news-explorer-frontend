@@ -2,17 +2,15 @@ import { useEffect } from "react";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../ModalWithForm/ModalWithForm.css";
-import { isOctal } from "validator";
 
 function SignUp({ isOpen, onClose, onSignInClick }) {
-  const { values, handleChange, errors, isValid, resetForm } =
-    useFormAndValidation();
+  const { values, handleChange, errors, resetForm } = useFormAndValidation();
 
   useEffect(() => {
     if (isOpen) {
       resetForm();
     }
-  }, [isOpen]);
+  }, [isOpen, resetForm]);
   const onSingUpSubmit = (evt) => {
     evt.preventDefault();
   };

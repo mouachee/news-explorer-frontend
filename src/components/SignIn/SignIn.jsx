@@ -11,7 +11,7 @@ function SignIn({ isOpen, onClose, onSignUpClick, handleSignIn }) {
     if (isOpen) {
       resetForm();
     }
-  }, [isOpen]);
+  }, [isOpen, resetForm]);
 
   const onSignInSubmit = (e) => {
     e.preventDefault();
