@@ -223,7 +223,7 @@
   .nav__container--menu-open {
     background-color: black;
   }
-  .nav__hide-moble {
+  .nav__hide-mobile {
     display: none;
   }
 }
