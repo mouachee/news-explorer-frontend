@@ -72,3 +72,7 @@ const fetchNews = async (keyword) => {
 - response.json() convert the response to JavaScript object.
 - const filteredArticles : is use to render only the cards with valid data.
   Because some cards might be null and display the "Removed" on the card alt and title.
+
+## Deployed Link App
+
+[live Demo](https://mouachee.github.io/news-explorer-frontend/)
