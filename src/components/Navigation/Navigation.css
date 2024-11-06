@@ -34,6 +34,9 @@
   font-weight: 700;
   font-family: "Roboto Slab ", Arial, sans-serif;
 }
+.nav__item--logo:hover {
+  color: rgb(182, 182, 182);
+}
 .nav__item--home {
   display: flex;
   justify-content: center;

@@ -41,6 +41,10 @@
   font-weight: 400;
   line-height: 24px;
 }
+
+.footer__link--home:hover {
+  color: gray;
+}
 .footer__link--tripleten {
   text-decoration: none;
   color: #1a1b22;
@@ -49,6 +53,10 @@
   font-weight: 400;
   line-height: 24px;
 }
+.footer__link--tripleten:hover {
+  color: gray;
+}
+
 .footer__social {
   display: flex;
   gap: 24px;

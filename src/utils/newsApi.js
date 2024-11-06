@@ -30,7 +30,7 @@ export const fetchNews = async (keyword) => {
 
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${keyword}&from=${sevenDaysAgo}&to=${today}&pageSize=100&apiKey=${APIkey}`
+      `https://nomoreparties.co/news/v2/everything?q=${keyword}&from=${sevenDaysAgo}&to=${today}&pageSize=100&apiKey=${APIkey}`
     );
     const data = await response.json();
 
