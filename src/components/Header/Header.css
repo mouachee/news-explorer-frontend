@@ -9,14 +9,14 @@
   max-width: 608px;
 }
 .header__title {
-  font-family: "Roboto slab", Arial, sans-serif;
+  font-family: "Roboto slab", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 60px;
   margin: 0;
 }
 
 .header__caption {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 18px;
   padding: 32px 0 32px;
   font-weight: 400;
@@ -47,7 +47,7 @@
 }
 
 .header__search-input {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   padding: 16px;
   width: 100%;
   border: 1px;
@@ -61,7 +61,7 @@
 .header__search-btn {
   position: absolute;
   right: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 18px;
   width: 168px;

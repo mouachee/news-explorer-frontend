@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import Facebook from "../../assets/facebook.svg";
-import Github from "../../assets/github.svg";
+import Facebook from "../../images/facebook.svg";
+import Github from "../../images/github.svg";
 function Footer() {
   return (
     <footer className="footer">
@@ -11,14 +11,14 @@ function Footer() {
         </p>
         <div className="footer__links">
           <div className="footer__links-container">
-            <Link to="/" className="footer__link--home">
+            <Link to="/" className="footer__link footer__link_home">
               Home
             </Link>
             <a
               href="https://tripleten.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer__link--tripleten"
+              className="footer__link footer__link_tripleten"
             >
               TripleTen
             </a>
@@ -26,19 +26,23 @@ function Footer() {
           <div className="footer__social">
             <a
               href="https://github.com/mouachee"
-              className="footer__social--github"
+              className="footer__social-link footer__social-link_github"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={Github} alt="" className="footer__social-icon" />
+              <img src={Github} alt="Github" className="footer__social-icon" />
             </a>
             <a
               href="https://www.facebook.com/tripleten.tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer__social--facebook"
+              className="footer__social-link footer__social-link_facebook"
             >
-              <img src={Facebook} alt="" className="footer__social-icon" />
+              <img
+                src={Facebook}
+                alt="Facebook"
+                className="footer__social-icon"
+              />
             </a>
           </div>
         </div>

@@ -14,7 +14,7 @@
   z-index: 1;
 }
 .app__search--with-bg {
-  background-image: url("../../assets/background.png");
+  background-image: url("../../images/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,12 +22,12 @@
 
 @media screen and (max-width: 863px) {
   .app__search--with-bg {
-    background-image: url("../../assets/backgroundTablet.png");
+    background-image: url("../../images/backgroundTablet.png");
   }
 }
 @media screen and (max-width: 630px) {
   .app__search--with-bg {
-    background-image: url("../../assets/backgroundMobile.png");
+    background-image: url("../../images/backgroundMobile.png");
     min-width: 320px;
   }
 }

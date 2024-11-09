@@ -29,7 +29,7 @@ export const Modal = ({
 
   return isOpen ? (
     <div
-      className={`modal modal_type_${name} ${isOpen ? "modal__opened" : ""}`}
+      className={`modal modal_type_${name} ${isOpen ? "modal_opened" : ""}`}
       onClick={handleOverlay}
     >
       <div className={`modal__content ${contentClass}`}>

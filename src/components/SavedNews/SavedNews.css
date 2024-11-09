@@ -1,4 +1,4 @@
-.saved__news-header {
+.saved__header {
   display: flex;
   flex-direction: column;
   padding: 40px 24px 56px;
@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-.saved__news--page {
+.saved__header--page {
   margin: 0;
   padding: 0;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -17,7 +17,7 @@
   color: #1a1b2280;
   width: 100%;
 }
-.saved__news--title {
+.saved__header--title {
   margin: 0;
   padding: 28px 0 30px;
   max-width: 530px;
@@ -42,14 +42,10 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 18px;
-  columns: #1a1b22;
+  color: #1a1b22;
   line-height: 24px;
 }
 .saved__news-list {
-  /* display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin: 118px 104px 62px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
   justify-content: center;

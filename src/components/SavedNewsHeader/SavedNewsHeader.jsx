@@ -12,9 +12,9 @@ function SavedNewsHeader({ savedArticles, keywords = [] }) {
   };
 
   return (
-    <div className="saved__news-header">
-      <p className="saved__news--page">Saved articles</p>
-      <h2 className="saved__news--title">
+    <div className="saved__header">
+      <p className="saved__header--page">Saved articles</p>
+      <h2 className="saved__header--title">
         Elise, you have {savedArticles.length} saved articles
       </h2>
       <p className="saved__keywords">

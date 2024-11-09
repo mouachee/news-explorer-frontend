@@ -12,7 +12,7 @@ function MobileMenu({
   if (!isOpen) return null;
   return (
     <div className="mobile-menu">
-      <div className="overlay" onClick={onClose}></div>
+      <div className="mobile-menu__overlay" onClick={onClose}></div>
       <div className="mobile-menu__container">
         <ul className="mobile-menu__nav-list">
           <li className="mobile-menu__item">

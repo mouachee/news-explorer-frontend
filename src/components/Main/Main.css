@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 .cards__result {
-  font-family: "Roboto Slab", Arial, sans-serif;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 40px;
   margin: 0;

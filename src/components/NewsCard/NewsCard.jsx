@@ -52,10 +52,10 @@ function NewsCard({
       <button
         className={`card__button ${
           onSavedPage
-            ? "card__remove-icon"
+            ? "card__button--remove"
             : isSaved
-            ? "card__saved-icon"
-            : "card__no-saved"
+            ? "card__button--saved"
+            : "card__button--unsaved"
         }`}
         onClick={handleSave}
         onMouseEnter={() => setShowText(true)}
@@ -65,7 +65,7 @@ function NewsCard({
         {onSavedPage && (
           <span
             className={`card__button-text ${
-              showText ? "" : "card__button-text_hidden"
+              showText ? "" : "card__button-text--hidden"
             }`}
           >
             Remove from saved
@@ -74,7 +74,7 @@ function NewsCard({
         {!isLoggedIn && !onSavedPage && (
           <span
             className={`card__button-text ${
-              showText ? "" : "card__button-text_hidden"
+              showText ? "" : "card__button-text--hidden"
             }`}
           >
             Sign in to save articles

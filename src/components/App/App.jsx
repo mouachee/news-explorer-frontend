@@ -13,7 +13,7 @@ import { saveArticle } from "../../utils/newsApi";
 import * as auth from "../../utils/auth";
 import { setToken } from "../../utils/token";
 import SignUp from "../SignUp/SignUp";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // import SignupSuccessPopup from "../SignupSuccessPopup/SignupSuccessPopup";
 

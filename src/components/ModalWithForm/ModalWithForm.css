@@ -11,7 +11,7 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal__opened {
+.modal_opened {
   visibility: visible;
 }
 .modal__content {
@@ -78,7 +78,7 @@
   border-radius: 4px;
 }
 .modal__close {
-  background: transparent url(../../assets/closeIcon.svg);
+  background: transparent url(../../images/closeIcon.svg);
   position: absolute;
   top: -44px;
   right: -44px;
@@ -124,6 +124,9 @@
   color: #2f71e5;
   cursor: pointer;
 }
+.modal__link--text:hover {
+  color: #4a8dd9;
+}
 .modal__error {
   position: absolute;
   bottom: -15px;
@@ -148,7 +151,7 @@
     bottom: 0;
   }
   .modal__close {
-    background: transparent url("../../assets/mobileCloseIcon.svg");
+    background: transparent url("../../images/mobileCloseIcon.svg");
     width: 24px;
     height: 24px;
     right: 16px;

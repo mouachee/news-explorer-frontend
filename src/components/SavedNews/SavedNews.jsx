@@ -4,9 +4,9 @@ import "./SavedNews.css";
 
 function SavedNews({ savedArticles, onRemoveArticle, keywords }) {
   return (
-    <>
+    <div className="saved">
       <SavedNewsHeader savedArticles={savedArticles} keywords={keywords} />
-      <div className="saved__news-list">
+      <ul className="saved__news-list">
         {savedArticles.map((item) => (
           <NewsCard
             key={item.url}
@@ -14,8 +14,8 @@ function SavedNews({ savedArticles, onRemoveArticle, keywords }) {
             onRemoveArticle={onRemoveArticle}
           />
         ))}
-      </div>
-    </>
+      </ul>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 @media screen and (max-width: 630px) {
-  .overlay {
+  .mobile-menu__overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -49,14 +49,14 @@
   }
   .mobile-menu__logo {
     font-weight: 700;
-    font-family: "Roboto Slab ", Arial, sans-serif;
+    font-family: "Roboto Slab ", Arial, Helvetica, sans-serif;
     font-size: 16px;
     text-decoration: none;
     color: #fff;
   }
 
   .mobile-menu__button {
-    background: transparent url("../../assets/mobileCloseIcon.svg");
+    background: transparent url("../../images/mobileCloseIcon.svg");
     width: 24px;
     height: 24px;
     border: none;

@@ -1,11 +1,11 @@
 import "./Navigation.css";
-import HomeLogoutIcon from "../../assets/wLogout.svg";
-import SaveNewsLogoutIcon from "../../assets/bLogout.svg";
-import HmenuIcon from "../../assets/homeMenu.svg";
-import SmenuIcon from "../../assets/savedMenu.svg";
+import HomeLogoutIcon from "../../images/wLogout.svg";
+import SaveNewsLogoutIcon from "../../images/bLogout.svg";
+import HmenuIcon from "../../images/homeMenu.svg";
+import SmenuIcon from "../../images/savedMenu.svg";
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import CurrentUserContext from "../contexts/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
@@ -50,7 +50,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
 
           <li
             className={`nav__item nav__item--home ${
-              isSavedNewsPage ? "nav__item-home--hover" : ""
+              isSavedNewsPage ? "nav__item--home-hover" : ""
             }`}
           >
             <Link
@@ -66,7 +66,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
             <>
               <li
                 className={`nav__item nav__item--saved ${
-                  isHomePage ? "nav__item-saved--hover" : ""
+                  isHomePage ? "nav__item--saved-hover" : ""
                 }`}
               >
                 <Link
@@ -80,7 +80,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
               </li>
               <li className="nav__item nav__item--logout">
                 <button className="nav__logout">
-                  <span className="nav__username">
+                  <span className="nav__user-name">
                     {currentUser?.name}Elise
                   </span>
                   <img
@@ -90,7 +90,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
                         : HomeLogoutIcon
                     }
                     alt="logout icon"
-                    className="logout__icon"
+                    className="nav__logout-icon"
                     onClick={onLogOut}
                   />
                 </button>
@@ -108,7 +108,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
           )}
 
           <li
-            className={`nav__item nav__menu-icon ${
+            className={`nav__item nav__item--menu-icon ${
               activeModal ? "nav__hide-mobile" : ""
             }`}
           >
@@ -120,7 +120,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
               <img
                 src={activeItem == "saved" ? SmenuIcon : HmenuIcon}
                 alt="menu icon"
-                className="menu__icon"
+                className="nav__menu-icon"
               />
             </button>
           </li>
