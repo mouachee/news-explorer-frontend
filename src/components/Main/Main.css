@@ -42,6 +42,7 @@
   font-size: 18px;
   font-weight: 500;
   align-self: center;
+  background: transparent;
 }
 
 @media screen and (max-width: 1279px) {
