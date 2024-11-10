@@ -56,7 +56,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
             <Link
               to="/"
               className={`nav__link ${
-                activeItem === "home" ? "nav__item--active" : ""
+                activeItem === "home" ? "nav__link--active" : ""
               }`}
             >
               Home
@@ -72,7 +72,7 @@ function Nav({ handleSignInClick, isLoggedIn, onLogOut, activeModal }) {
                 <Link
                   to="/saved-news"
                   className={`nav__link ${
-                    activeItem === "saved" ? "nav__item--active" : ""
+                    activeItem === "saved" ? "nav__link--active" : ""
                   }`}
                 >
                   Saved articles
