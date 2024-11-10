@@ -15,7 +15,6 @@ import { setToken } from "../../utils/token";
 import SignUp from "../SignUp/SignUp";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-// import SignupSuccessPopup from "../SignupSuccessPopup/SignupSuccessPopup";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -80,21 +79,29 @@ function App() {
 
     try {
       const fetchArticles = await fetchNews(keyword); // fetch articles from the api using the keyword search
-      const articlesWithKeyword = fetchArticles.map((article) => ({
-        ...article, // this will copied the articles array that fetched from api to fetchArticles array and will add the keyword: "" property to the copied array by using map().
-        keyword, // keyword property
-      }));
-      setArticles(articlesWithKeyword); // it updates the state of the newly copied articles that have keyword property.
-      localStorage.setItem(
-        "lastSearchArticles",
-        JSON.stringify(articlesWithKeyword)
-      );
+      console.log(fetchArticles);
 
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
+      if (fetchArticles.length == 0) {
+        setArticles([]);
+        localStorage.setItem("lastSearchAritcles", JSON.stringify([]));
+      } else {
+        const articlesWithKeyword = fetchArticles.map((article) => ({
+          ...article, // this will copied the articles array that fetched from api to fetchArticles array and will add the keyword: "" property to the copied array by using map().
+          keyword, // keyword property
+        }));
+        setArticles(articlesWithKeyword); // it updates the state of the newly copied articles that have keyword property.
+        localStorage.setItem(
+          "lastSearchArticles",
+          JSON.stringify(articlesWithKeyword)
+        );
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }
     } catch (err) {
       console.error(err);
+    } finally {
       setLoading(false);
     }
   };
@@ -160,8 +167,13 @@ function App() {
     );
 
     if (lastSearchTerm && isHomePage && !searchTerm) {
-      setSearchTerm(lastSearchTerm);
+      setSearchTerm(lastSearchTerm); //set search term if previously searched
       setArticles(storedArticles || []);
+      setLoading(false);
+    } else if (!isHomePage) {
+      setSearchTerm("");
+      setArticles([]);
+      setLoading(false);
     }
   }, [isHomePage, searchTerm]);
 
@@ -205,6 +217,8 @@ function App() {
                   onRemoveArticle={removeArticle}
                   loading={loading}
                   isLoggedIn={isLoggedIn}
+                  searchTerm={searchTerm}
+                  onSignInClick={handleSignInClick}
                 />
               }
             />

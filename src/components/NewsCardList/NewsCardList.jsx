@@ -7,6 +7,7 @@ function NewsCardList({
   savedArticles,
   onRemoveArticle,
   isLoggedIn,
+  onSignInClick,
 }) {
   const [cardsShown, setCardsShown] = useState(3);
 
@@ -25,6 +26,7 @@ function NewsCardList({
               savedArticles={savedArticles}
               onRemoveArticle={onRemoveArticle}
               isLoggedIn={isLoggedIn}
+              onSignInClick={onSignInClick}
             />
           );
         })}

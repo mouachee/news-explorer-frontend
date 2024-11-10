@@ -8,6 +8,7 @@ function NewsCard({
   savedArticles = [],
   onRemoveArticle,
   isLoggedIn,
+  onSignInClick,
 }) {
   const isSaved = savedArticles.some((article) => article.url === item.url);
   const location = useLocation();
@@ -16,6 +17,10 @@ function NewsCard({
   const [showText, setShowText] = useState(false);
 
   const handleSave = () => {
+    if (!isLoggedIn && !onSavedPage) {
+      onSignInClick();
+      return;
+    }
     if (onSavedPage) {
       onRemoveArticle(item);
     } else {
