@@ -1,0 +1,127 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #ffff;
+}
+.header__container {
+  margin: 80px 0 80px;
+  max-width: 608px;
+}
+.header__title {
+  font-family: "Roboto slab", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  margin: 0;
+}
+
+.header__caption {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 32px 0 32px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 24px;
+}
+.header__search-form {
+  position: relative;
+}
+.header__search-container {
+  margin: 56px 0 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header__search-error {
+  width: 200px;
+  height: 14px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color: #ff0000;
+  position: absolute;
+  top: -24px;
+  left: 24px;
+}
+
+.header__search-input {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 16px;
+  width: 100%;
+  border: 1px;
+  border-color: #d1d2d6;
+  height: 64px;
+  border-radius: 100px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.header__search-btn {
+  position: absolute;
+  right: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  width: 168px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: #2f71e5;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.header__search-btn:hover {
+  background-color: #347eff;
+}
+.header__search-btn:active {
+  background-color: #2a65cc;
+}
+
+@media screen and (max-width: 863px) {
+  .header__container {
+    margin: 38px 0 48px;
+    max-width: 452px;
+  }
+  .header__title {
+    font-size: 36px;
+  }
+  .header__caption {
+    padding: 16px 0 16px;
+  }
+  .header__search-container {
+    margin: 32px 0 0;
+  }
+  .header__search-input {
+    height: 56px;
+  }
+  .header__search-btn {
+    height: 56px;
+    width: 160px;
+  }
+  .header__search-error {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .header__container {
+    max-width: 288px;
+    margin: 30px 0 32px;
+    padding: 0 16px;
+  }
+  .header__caption {
+    padding: 16px 0 122px;
+  }
+  .header__search-container {
+    flex-direction: column;
+    height: 128px;
+  }
+
+  .header__search-btn {
+    width: 100%;
+    margin-top: 66px;
+  }
+}

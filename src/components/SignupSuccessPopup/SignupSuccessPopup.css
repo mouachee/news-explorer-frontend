@@ -1,0 +1,60 @@
+.success-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99991;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.success-popup__container {
+  max-width: 430px;
+  height: 182px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+}
+.success-popup__close-btn {
+  background: transparent url(../../images/closeIcon.svg);
+  position: absolute;
+  top: -44px;
+  right: -44px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.success-popup__content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 43px 71px 51px 36px;
+  gap: 14px;
+}
+.success-popup__message {
+  margin: 0;
+  padding: 0;
+  max-width: 315px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+}
+.success-popup__link {
+  max-width: 228px;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #2f71e5;
+  cursor: pointer;
+}
+.success-popup__link:hover {
+  color: #4a8dd9;
+}

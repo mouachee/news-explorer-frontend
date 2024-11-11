@@ -1,0 +1,211 @@
+.card {
+  width: 400px;
+  height: 576px;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.card__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+.card__image {
+  width: 400px;
+  height: 272px;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+.card__keyword {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #ffff;
+  padding: 8px 22px;
+  margin: 0;
+}
+
+.card__button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  color: #ffff;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  display: flex;
+}
+.card__button--unsaved {
+  background-image: url("../../images/noSaveIcon.svg");
+}
+.card__button--saved {
+  background-image: url("../../images/savedIcon.svg");
+}
+.card__button--remove {
+  background-image: url("../../images/trash.svg");
+}
+.card__button--remove:hover {
+  background-image: url("../../images/trashHover.svg");
+}
+.card__button--unsaved:hover {
+  background-image: url("../../images/saveIconHover.svg");
+}
+.card__info {
+  margin: 20px 24px 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.card__published {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  max-width: 161px;
+  font-size: 18px;
+  margin: 0 0 12px;
+  padding: 0;
+  color: #b6bcbf;
+  font-weight: 400;
+}
+.card__title {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  height: 60px;
+  line-height: 1.15;
+  color: #1a1b22;
+  font-weight: 400;
+  margin: 0 0 16px;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.card__description {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  height: 110px;
+  line-height: 22px;
+  color: #1a1b22;
+  margin: 0 0 18px;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.card__source {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #b6bcbf;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.card__button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #ffff;
+  box-shadow: 0px 10px 22px 0px #3b4a741a;
+  box-sizing: border-box;
+  color: #1a1b22;
+  z-index: 999;
+  border-radius: 10px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  transition: opacity 0.5s linear 0s;
+  margin: 0;
+  padding: 11px 26px;
+  white-space: nowrap;
+  position: absolute;
+  right: 45px;
+}
+.card__button-text--hidden {
+  opacity: 0;
+}
+
+@media screen and (max-width: 863px) {
+  .card {
+    width: 224px;
+    height: 420px;
+  }
+  .card__image {
+    height: 150px;
+    width: 224px;
+  }
+  .card__button {
+    top: 8px;
+    right: 8px;
+  }
+  .card__button-text {
+    padding: 6px 14px;
+  }
+  .card__info {
+    margin: 16px 16px;
+  }
+  .card__title {
+    font-size: 22px;
+    height: 72px;
+    -webkit-line-clamp: 3;
+    margin: 0;
+    padding-bottom: 3px;
+    line-height: 24px;
+  }
+  .card__description {
+    height: 88px;
+    -webkit-line-clamp: 4;
+    margin: 7px 0 12px;
+  }
+  .card__keyword {
+    padding: 8px 20px;
+    left: 8px;
+    top: 8px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .card {
+    width: 288px;
+    height: 440px;
+  }
+  .card__image {
+    width: 288px;
+    height: 196px;
+  }
+  .card__published {
+    margin: 0 0 10px;
+  }
+  .card__title {
+    padding-bottom: 3px;
+    height: 48px;
+    -webkit-line-clamp: 2;
+  }
+  .card__description {
+    margin: 11px 0 8px;
+  }
+}

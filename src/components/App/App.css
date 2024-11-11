@@ -1,0 +1,33 @@
+.app {
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
+.app__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+}
+.app__search {
+  position: relative;
+  z-index: 1;
+}
+.app__search--with-bg {
+  background-image: url("../../images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 863px) {
+  .app__search--with-bg {
+    background-image: url("../../images/backgroundTablet.png");
+  }
+}
+@media screen and (max-width: 630px) {
+  .app__search--with-bg {
+    background-image: url("../../images/backgroundMobile.png");
+    min-width: 320px;
+  }
+}
